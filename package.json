@@ -1,7 +1,7 @@
 {
-  "name": "react-testing-enzyme-mocha",
+  "name": "react-testing-enzyme-mocha-beerList",
   "version": "1.0.0",
-  "description": "testing react components using enzyme and mocha",
+  "description": "testing react components (beerList) using enzyme and mocha",
   "main": "index.js",
   "dependencies": {
     "axios": "^0.9.1",
@@ -33,7 +33,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EduRomoGO/reactTestingEnzymeMocha.git"
+    "url": "git+https://github.com/EduRomoGO/beerListTesting.git"
   },
   "keywords": [
     "testing",
@@ -44,7 +44,7 @@
   "author": "EduRomoGO",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EduRomoGO/reactTestingEnzymeMocha/issues"
+    "url": "https://github.com/EduRomoGO/beerListTesting/issues"
   },
-  "homepage": "https://github.com/EduRomoGO/reactTestingEnzymeMocha#readme"
+  "homepage": "https://github.com/EduRomoGO/beerListTesting#readme"
 }
