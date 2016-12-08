@@ -10,23 +10,31 @@ export class BeerListContainer extends Component {
 	};
 
 	addItem(item) {
-		this.state.beers.push(item);
+		this.setState({
+			beers: [].concat(this.state.beers).concat([item])
+		});
 	};
 
 
   render() {
     return <div>
-		        <InputArea/>
+		        <InputArea onSubmit={this.addItem} />
 		        <BeerList/>
     		</div>
   }
 }
 
 export class InputArea extends Component {
+
+	propTypes = {
+		onSubmit: React.PropTypes.func.isRequired
+	};
+
 	render() {
 		return <input />
 	}
 }
+
 
 export class BeerList extends Component {
 	render() {
