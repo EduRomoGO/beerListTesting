@@ -32,7 +32,10 @@ export class InputArea extends Component {
 	};
 
 	render() {
-		return <input />
+		return <div>
+					<input />
+					<button />
+				</div>
 	}
 }
 
