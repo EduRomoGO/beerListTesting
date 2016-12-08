@@ -27,6 +27,13 @@ export class BeerListContainer extends Component {
 
 export class InputArea extends Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			text: ''
+		};
+	}
+
 	propTypes = {
 		onSubmit: React.PropTypes.func.isRequired
 	};
