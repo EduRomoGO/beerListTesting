@@ -6,68 +6,62 @@ import { InputArea, BeerList } from '../components';
 
 describe('BeerListContainer', () => {
 
-  it('should render InputArea and BeerList', () => {
-    const wrapper = shallow(<BeerListContainer/>);
-    
-    expect(wrapper.containsAllMatchingElements([
-      <InputArea/>,
-      <BeerList/>
-    ])).to.equal(true);
-  });
+    it('should render InputArea and BeerList', () => {
+        const wrapper = shallow( < BeerListContainer / > );
 
-  it('should start with an empty list', () => {
-  	const wrapper = shallow(<BeerListContainer/>);
+        expect(wrapper.containsAllMatchingElements([ < InputArea / > , < BeerList / > ])).to.equal(true);
+    });
 
-  	expect(wrapper.state('beers')).to.eql([]);
-  });
+    it('should start with an empty list', () => {
+        const wrapper = shallow( < BeerListContainer / > );
 
-  it('is able to add items to the list', () => {
-  	const wrapper = shallow(<BeerListContainer/>);
+        expect(wrapper.state('beers')).to.eql([]);
+    });
 
-  	wrapper.instance().addItem('Heineken');
-  	// wrapper.addItem('Heineken');
+    it('is able to add items to the list', () => {
+        const wrapper = shallow( < BeerListContainer / > );
 
-  	expect(wrapper.state('beers')).to.have.length(1);
-  });
+        wrapper.instance().addItem('Heineken');
+        // wrapper.addItem('Heineken');
 
-  it('passes addItem to InputArea', () => {
-  	const wrapper = shallow(<BeerListContainer/>);
-  	const inputArea = wrapper.find('InputArea');
-  	const addItem = wrapper.instance().addItem;
+        expect(wrapper.state('beers')).to.have.length(1);
+    });
 
-  	expect(inputArea.prop('onSubmit')).to.eql(addItem);
-  });
+    it('passes addItem to InputArea', () => {
+        const wrapper = shallow( < BeerListContainer / > );
+        const inputArea = wrapper.find('InputArea');
+        const addItem = wrapper.instance().addItem;
 
-  it('passes a bound addItem function to InputArea', () => {
-    const wrapper = shallow(<BeerListContainer/>);
-    const inputArea = wrapper.find(InputArea);
+        expect(inputArea.prop('onSubmit')).to.eql(addItem);
+    });
 
-    inputArea.prop('onSubmit')('Mahou');
+    it('passes a bound addItem function to InputArea', () => {
+        const wrapper = shallow( < BeerListContainer / > );
+        const inputArea = wrapper.find(InputArea);
 
-    expect(wrapper.state('beers')).to.eql(['Mahou']);
-  });
+        inputArea.prop('onSubmit')('Mahou');
+
+        expect(wrapper.state('beers')).to.eql(['Mahou']);
+    });
 
 });
 
 describe('InputArea', () => {
 
-	it('should contain an input and a button', () => {
-		const wrapper = shallow(<InputArea />);
+    it('should contain an input and a button', () => {
+        const wrapper = shallow( < InputArea / > );
 
-		expect(wrapper.containsAllMatchingElements([
-			<input />,
-			<button />
-		])).to.equal(true);
-	});
+        expect(wrapper.containsAllMatchingElements([ < input / > , < button / > ])).to.equal(true);
+    });
 
-	it('should accept input', () => {
-		const wrapper = shallow(<InputArea />);
-		const input = wrapper.find('input');
+    it('should accept input', () => {
+        const wrapper = shallow( < InputArea / > );
+        const input = wrapper.find('input');
 
-		input.simulate('change', {target: {value: 'Cruzcampo'}});
+        input.simulate('change', { target: { value: 'Cruzcampo' } });
 
-		expect(wrapper.state('text')).to.equal('Cruzcampo');
-		expect(input.prop('value')).to.equal('Cruzcampo');
-	});
+        expect(wrapper.state('text')).to.equal('Cruzcampo');
+        expect(input.prop('value')).to.equal('Cruzcampo');
+    });
 
 });
