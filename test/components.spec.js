@@ -48,3 +48,16 @@ describe('BeerListContainer', () => {
   });
 
 });
+
+describe('InputArea', () => {
+
+	it('should contain an input and a button', () => {
+		const wrapper = shallow(<InputArea />);
+
+		expect(wrapper.containsAllMatchingElements([
+			<input />,
+			<button />
+		])).to.equal(true);
+	});
+
+});
