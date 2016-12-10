@@ -34,6 +34,10 @@ export class InputArea extends Component {
 		};
 	}
 
+	setText(event) {
+		this.setState({text: event.target.value});
+	}
+
 	render() {
 		return <div>
 					<input />
