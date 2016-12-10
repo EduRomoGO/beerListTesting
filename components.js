@@ -48,7 +48,7 @@ export class InputArea extends Component {
 	render() {
 		return <div>
 					<input value={this.state.text} onChange={this.setText} />
-					<button onClick={this.hanleClick} />
+					<button onClick={this.hanleClick}>Add</button>
 				</div>
 	}
 }

@@ -54,7 +54,7 @@ describe('InputArea', () => {
         const wrapper = shallow( < InputArea / > );
 
         expect(wrapper.containsAllMatchingElements(
-            [ < input / > , < button / > ])).to.equal(true);
+            [ < input / > , <button>Add</button> ])).to.equal(true);
     });
 
     it('should start with an empty value', () => {
