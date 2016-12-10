@@ -74,7 +74,9 @@ export class BeerList extends Component {
 	}
 }
 
-
+BeerList.propTypes = {
+	items: React.PropTypes.array.isRequired
+};
 
 
 
