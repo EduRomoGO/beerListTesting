@@ -76,7 +76,7 @@ describe('InputArea', () => {
 
     it('should call onSubmit when Add is clicked', () => {
         const addItemSpy = spy();
-        const wrapper = shallow(<InputArea onSubmit={addItemSpy} / >);
+        const wrapper = shallow(<InputArea onSubmit={addItemSpy} />);
 
         wrapper.setState({text: 'Budweiser'});
 
@@ -89,6 +89,39 @@ describe('InputArea', () => {
     });
 
 });
+
+describe('BeerList', () => {
+
+    it('should render zero items', () => {
+        const wrapper = shallow(<Beerlist items={[]}/>);
+
+        expect(wrapper.find('li')).to.have.length(0);
+    });
+
+    it('should render undefined items', () => {
+        const wrapper = shallow(<Beerlist items={undefined} />);
+
+        expect(wrapper.find('li')).to.have.length(0);
+    });
+
+    it('should reder some items', () => {
+        const items = ['San Miguel', 'Estrella Galicia', 'Damm'];
+        const wrapper = shallow(<Beerlist items={items} />);
+
+        expect(wrapper.find('li')).to.have.length(3);
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 
 
