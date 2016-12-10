@@ -3,6 +3,7 @@ import { expect } from 'chai';
 import { shallow, mount } from 'enzyme';
 import { BeerListContainer } from '../components';
 import { InputArea, BeerList } from '../components';
+import { spy } from 'sinon';
 
 describe('BeerListContainer', () => {
 
@@ -71,4 +72,27 @@ describe('InputArea', () => {
         expect(input.prop('value')).to.equal('Cruzcampo');
     });
 
+    it('should call onSubmit when Add is clicked', () => {
+        const addItemSpy = spy();
+        const wrapper = shallow(<InputArea onSubmit={addItemSpy} / >);
+
+        wrapper.setState({text: 'Budweiser'});
+
+        const addButton = wrapper.find('button');
+
+        addButton.simulate('click');
+
+        expect(addItemSpy.calledOnce).to.equal(true);
+        expect(addItemSpy.calledWith('Budweiser')).to.equal(true);
+    });
+
 });
+
+
+
+
+
+
+
+
+
