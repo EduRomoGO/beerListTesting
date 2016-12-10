@@ -63,8 +63,8 @@ export class BeerList extends Component {
 		let beers;
 
 		if (this.props.items) {
-			beers = this.props.items.map(function (item) {
-				return <li>{item}</li>
+			beers = this.props.items.map(function (item, index) {
+				return <li key={index}>{item}</li>
 			});
 		}
 
