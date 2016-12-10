@@ -110,6 +110,15 @@ describe('BeerList', () => {
 
         expect(wrapper.find('li')).to.have.length(3);
     });
+
+    it('should render the items for real when mounted', () => {
+        const wrapper = mount(<BeerListContainer />);
+
+        wrapper.instance().addItem('Bucanier');
+        wrapper.instance().addItem('Delirium tremens');
+
+        expect(wrapper.find('li')).to.have.length(2);
+    });
 });
 
 
