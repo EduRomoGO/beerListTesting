@@ -54,7 +54,14 @@ describe('InputArea', () => {
         expect(wrapper.containsAllMatchingElements([ < input / > , < button / > ])).to.equal(true);
     });
 
-    xit('should accept input', () => {
+    it('should start with an empty value', () => {
+        const wrapper = shallow( <InputArea/>);
+        const input = wrapper.find('input');
+
+        expect(wrapper.state('text')).to.equal('');
+    });
+
+    it('should accept input', () => {
         const wrapper = shallow( < InputArea / > );
         const input = wrapper.find('input');
 
@@ -62,14 +69,6 @@ describe('InputArea', () => {
 
         expect(wrapper.state('text')).to.equal('Cruzcampo');
         expect(input.prop('value')).to.equal('Cruzcampo');
-    });
-
-    it('should start with an empty value', () => {
-        const wrapper = shallow( <InputArea/>);
-        const input = wrapper.find('input');
-
-
-        expect(wrapper.state('text')).to.equal('');
     });
 
 });
