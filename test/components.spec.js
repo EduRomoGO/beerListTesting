@@ -10,7 +10,8 @@ describe('BeerListContainer', () => {
     it('should render InputArea and BeerList', () => {
         const wrapper = shallow( < BeerListContainer / > );
 
-        expect(wrapper.containsAllMatchingElements([ < InputArea / > , < BeerList / > ])).to.equal(true);
+        expect(wrapper.containsAllMatchingElements(
+            [ < InputArea / > , < BeerList / > ])).to.equal(true);
     });
 
     it('should start with an empty list', () => {
@@ -52,7 +53,8 @@ describe('InputArea', () => {
     it('should contain an input and a button', () => {
         const wrapper = shallow( < InputArea / > );
 
-        expect(wrapper.containsAllMatchingElements([ < input / > , < button / > ])).to.equal(true);
+        expect(wrapper.containsAllMatchingElements(
+            [ < input / > , < button / > ])).to.equal(true);
     });
 
     it('should start with an empty value', () => {

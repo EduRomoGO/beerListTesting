@@ -17,12 +17,12 @@ export class BeerListContainer extends Component {
 	};
 
 
-  render() {
-    return <div>
+  	render() {
+   		return <div>
 		        <InputArea onSubmit={this.addItem} />
 		        <BeerList/>
     		</div>
-  }
+  	}
 }
 
 export class InputArea extends Component {
@@ -33,16 +33,22 @@ export class InputArea extends Component {
 			text: ''
 		};
 		this.setText = this.setText.bind(this);
+		this.hanleClick = this.hanleClick.bind(this);
 	}
 
 	setText(event) {
 		this.setState({text: event.target.value});
 	}
 
+
+	hanleClick() {
+		this.props.onSubmit(this.state.text);
+	}
+
 	render() {
 		return <div>
 					<input value={this.state.text} onChange={this.setText} />
-					<button />
+					<button onClick={this.hanleClick} />
 				</div>
 	}
 }
