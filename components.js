@@ -41,7 +41,7 @@ export class InputArea extends Component {
 
 	render() {
 		return <div>
-					<input onChange={this.setText} />
+					<input value={this.state.text} onChange={this.setText} />
 					<button />
 				</div>
 	}
