@@ -34,10 +34,6 @@ export class InputArea extends Component {
 		};
 	}
 
-	propTypes = {
-		onSubmit: React.PropTypes.func.isRequired
-	};
-
 	render() {
 		return <div>
 					<input />
@@ -45,6 +41,10 @@ export class InputArea extends Component {
 				</div>
 	}
 }
+
+InputArea.propTypes = {
+	onSubmit: React.PropTypes.func.isRequired	
+};
 
 
 export class BeerList extends Component {
