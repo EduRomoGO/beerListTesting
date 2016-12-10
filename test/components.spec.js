@@ -93,20 +93,20 @@ describe('InputArea', () => {
 describe('BeerList', () => {
 
     it('should render zero items', () => {
-        const wrapper = shallow(<Beerlist items={[]}/>);
+        const wrapper = shallow(<BeerList items={[]}/>);
 
         expect(wrapper.find('li')).to.have.length(0);
     });
 
     it('should render undefined items', () => {
-        const wrapper = shallow(<Beerlist items={undefined} />);
+        const wrapper = shallow(<BeerList items={undefined} />);
 
         expect(wrapper.find('li')).to.have.length(0);
     });
 
     it('should reder some items', () => {
         const items = ['San Miguel', 'Estrella Galicia', 'Damm'];
-        const wrapper = shallow(<Beerlist items={items} />);
+        const wrapper = shallow(<BeerList items={items} />);
 
         expect(wrapper.find('li')).to.have.length(3);
     });
