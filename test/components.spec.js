@@ -105,7 +105,7 @@ describe('BeerList', () => {
     });
 
     it('should reder some items', () => {
-        const items = ['San Miguel', 'Estrella Galicia', 'Damm'];
+        const items = ['San Miguel', 'Estrella Galicia', 'Estrella Damm'];
         const wrapper = shallow(<BeerList items={items} />);
 
         expect(wrapper.find('li')).to.have.length(3);
