@@ -19,7 +19,7 @@ export class BeerListContainer extends Component {
 
   	render() {
    		return <div>
-		        <InputArea onSubmit={this.addItem} />
+		        <InputArea onSubmit={this.addItem} items={this.state} />
 		        <BeerList/>
     		</div>
   	}
@@ -60,6 +60,22 @@ InputArea.propTypes = {
 
 export class BeerList extends Component {
 	render() {
-		return <ul />
+		let beers;
+
+		if (this.props.items) {
+			beers = this.props.items.map(function (item) {
+				return <li>{item}</li>
+			});
+		}
+
+		return <ul>
+					{beers}
+				</ul>
 	}
 }
+
+
+
+
+
+
